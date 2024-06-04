@@ -1,0 +1,16 @@
+#Sales Module in Odoo
+It gives us the details of the quotations that we make to the customer and also the confirmation ,validation of the quotation and also in notifying the customer in the form of email 
+It gives various details about the salesperson ,sales ,delivery status via graph,schedules or calenders. 
+It gives orders to upsell and order details and can be filtered into a variety of different scenarios.
+It gives the product details and pricing and configurations.
+
+
+#Purchase Module
+The purchase section in a company should be given maximum attention or there will be a problem in the production section ,sales section and a reduce in the corporate earnings 
+The purchase module has a method for request of quotations and which can do the specified task like product details , quantity and others.
+It can also generate reciept and notify the end users 
+We have to first form a new request quotation and then fill the necesarry details and then cofirm it then send a mail for confirmation.
+After confirmation then we allot the necesarry details in  additional info then register and then validate
+after validation generate the bill confirm the bill/refund amount and then green in payment tag is estblished in the right corner 
+The top menu of purchase module is same as that of Sales module and has two type of agreement that is single (exclusive) RFQ agreement and multiple RFQ agreement.
+The graph gives detailed overview of the purchase list
