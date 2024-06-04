@@ -12,5 +12,5 @@ It can also generate reciept and notify the end users
 We have to first form a new request quotation and then fill the necesarry details and then cofirm it then send a mail for confirmation.
 After confirmation then we allot the necesarry details in  additional info then register and then validate
 after validation generate the bill confirm the bill/refund amount and then green in payment tag is estblished in the right corner 
-The top menu of purchase module is same as that of Sales module and has two type of agreement that is single (exclusive) RFQ agreement and multiple RFQ agreement.
+The top menu options of purchase module is same as that of Sales module and has two type of agreement that is single (exclusive) RFQ agreement and multiple RFQ agreement.
 The graph gives detailed overview of the purchase list
