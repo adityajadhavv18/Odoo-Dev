@@ -2,7 +2,15 @@ It can be used by company of any size and it is integrated with sales ,purchase 
 It is also integrated with manufacturing and repair for better services 
 It has inventory adjustments method to restock the quantity and scrap operation to scrap out the expired or left over products
 
-Pos 
-Pos module can be accessed offline
+#odoo models 
+to activate the developer mode we need to go to the settings and activate it 
+it will give all the details about the every parameter of the form or field 
+we go to the setting and select technical and click models then in the search bar we can search for specific category like product template and we will get 
+all the fileds which are necessary based on deifferent conditions so we can get to know about them in detail via miscellnous of the model 
 
-138
+
+#To create new field in the form via model
+go to technical then model enter the type of model in the search bar 
+Then select the model and click add new line 
+This will give you access to fill few parameter to create and field then save and close the new field then after that click cloud like icon
+to save it manually 
