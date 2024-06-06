@@ -1,0 +1,21 @@
+#Odoo module structure
+1.addons - this file has all the odoo community modules,in odoo config file add the addons path to connect all the modules
+2.manifest.py - it is responsible to hold the different information of the module ,it is in the dictionary form (key:value)
+                depends:- this contains the dependencies of the module and helps in customization
+                data:- this contains all the security and views details of the module 
+                installable:- true (to allow it to be iinstalled)
+3.init.py - this is the most important file as all the model and python related directories which help in working are imported here 
+4.data: this file contians all the xml code 
+5.i18n: this contians all the information related to translation of different terms 
+6.model: this contains all the models fileds and function inside it 
+7.security: this contains all the security details like accessing files to specific users
+8.static:this contains all ths css files , js files and pictures related things
+9.tests:code related to testing of the application
+10.views:all the xml files related to the views are available in this directory  
+11.wizard:used to display the pop up messages 
+
+#to make odoo module using single command 
+- in side odoo directory open terminal and put the command ./odoo-bin scaffold module_name directory_name(it should be separate)
+- then add the path of this separate directory to addons path to make the module visible for installation at odoo interface
+- update apps list and search the new module 
+   
