@@ -5,3 +5,4 @@
 - eg: We click the products from the menu which happens to be set with default action that is kanban view 
 - We can change this action by clicking the Debug section and select the edit action form where we can change the default action 
   of every field or element 
+- The view is the code we view when we click edit form action 
