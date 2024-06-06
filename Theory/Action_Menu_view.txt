@@ -1,0 +1,7 @@
+#To view the menu 
+
+- The menu for every module whether it sales, purchase, inventory etc is always present in the top bar of the screen
+- Action is the default action which is perfromed when we click something from the menu or anywhere else 
+- eg: We click the products from the menu which happens to be set with default action that is kanban view 
+- We can change this action by clicking the Debug section and select the edit action form where we can change the default action 
+  of every field or element 
