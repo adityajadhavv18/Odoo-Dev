@@ -1,0 +1,11 @@
+#First make the new field in model as mention in previous file
+- after making the custom field in a particular model activate developer mode
+- After activating the developer mode click the element which belongs to a particular model eg:- product.template and click the debug mode 
+- In debug section click edit form and after that a code will open 
+- In the code edit the field 
+eg:-
+<field name = "x_processor"/>
+
+in case we have created a field called processor for the product computer 
+
+then save it manually and you will get the field updated in the form 
