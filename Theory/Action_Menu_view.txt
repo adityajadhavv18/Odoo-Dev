@@ -6,3 +6,38 @@
 - We can change this action by clicking the Debug section and select the edit action form where we can change the default action 
   of every field or element 
 - The view is the code we view when we click edit form action 
+
+
+#To edit the Menu and action of it
+- It is specifically done to edit actions of a particular menu option or of a customized menu  
+- First go to settings then click technical after clicking select the menu items options 
+- After heading to menu items option we can search which ever menu option which want to customize or edit action eg:- Sales/Products 
+  in sales module products menu option 
+- After Selecting the option edit the Menu name if it has to be customized and then to edit action go to Action and click the arrow which 
+  is to the right of the action tab 
+- Edit the action type,view mode,mobile view mode and specify the domain value with syntax
+  [('Field','=', 'Selection')]
+  eg:- [('detailed_type', '=', 'service')]
+- Save it manually and refresh the page and the specified action will be ready to be executed
+
+#To add search element for filter, groupby and searchbar 
+
+- It is used to search fields which are not defined in the search bar or filter option 
+- To customize the search settings we have to add field for search bar this can be done using the debug option and select edit searchview 
+- there will be code for the search view and then add the field to be searched by specifying the technical/field name and save manually
+
+- eg:- <field name="x_helloo" filter_domain="[('x_helloo', 'ilike', self)]"/>
+
+- save manually and in the search ba the specified content will be available for search
+
+- For groupby in filter section 
+- A group tag is used to implement the groupby option in filter section 
+
+- eg:  <group expand="1" string="Group By">
+          <filter string="hello" name="x_helloo" context="{'group_by':'x_helloo'}"/>
+        </group>
+
+#For applying filter for search element 
+- Odoo uses a specific <filter></filter> tag for applying filter to search element 
+
+- eg: <filter string="Hello" name="x_helloo" domain="[('x_helloo','=',True)]"/> 
