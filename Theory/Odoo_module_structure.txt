@@ -14,7 +14,7 @@
 10.views:all the xml files related to the views are available in this directory  
 11.wizard:used to display the pop up messages 
 
-#to make odoo module using single command 
+#To Create Odoo Module Using Single Command
 - in side odoo directory open terminal and put the command ./odoo-bin scaffold module_name directory_name(it should be separate)
 - then add the path of this separate directory to addons path to make the module visible for installation at odoo interface
 - update apps list and search the new module 
