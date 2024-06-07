@@ -1,0 +1,15 @@
+#Lets go step by step of how to how to inherit and launch module in odoo app environment 
+
+- First make an odoo directory by using ./odoo-bin scaffold module_name directory_name
+- after creation of that file make the init.py file and manifest.py file 
+- In the manifest.py add the neccesary details and dependencies of the module and make installable true so that the module can be 
+  can be installed in the odoo environment 
+- Make another folder for the models of the module and we can name is as models itself 
+- In models folder make the model file ,here we have made product.py which is also the dependency of the module
+  all the models which we are going to inherit in a module will be the dependencies of it.
+- In model folder make another init.py file to import the necessary from the product file
+  from . import product
+
+- Write the required code and inherit in product.py and then in the main init.py file import everything from models
+  from . import models
+- After that restart the environment and we will the module ready to be installed 
