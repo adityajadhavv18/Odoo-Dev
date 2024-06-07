@@ -23,3 +23,5 @@
 - Write the required code and inherit in product.py and then in the main init.py file import everything from models
   from . import models
 - After that restart the environment and we will the module ready to be installed 
+
+In case of xml changes upgrade the module and in case of changes in py file we have to restart odoo service
