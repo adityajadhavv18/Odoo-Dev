@@ -4,13 +4,125 @@
         <record id="product_template_only_form_view" model="ir.ui.view">
             <field name="name">product.template.product.form</field>
             <field name="model">product.templates</field>
-            <field name="inherit_id" ref="product. product_template_only_form_view"/>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/> <!--ref to inherit the exact feature fro exact module-->
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='default_code']" position= "before"> <!--it is used to identify the field where we want to add the new custom field-->
+                <xpath expr="//field[@name='default_code']" position= "before"> <!--xpath is used to identify the field where we want to add the new custom field-->
                     <field name="processor"/>
                 </xpath>
             </field>
         </record>
+
+<!--for having tree view for the product-->
+
+        <record id="product_template_tree_view" model="ir.ui.view">
+            <field name="name">product.template.product.form</field>
+            <field name="model">product.templates</field>
+            <field name="inherit_id" ref="product.product_template_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='default_code']" position= "after"> 
+                    <field name="processor"/>
+                </xpath>
+            </field>
+        </record>
+
+<!--For customizing the search feature-->
+        <record id="product_template_search_view" model="ir.ui.view">
+            <field name="name">product.template.product.form</field>
+            <field name="model">product.templates</field>
+            <field name="inherit_id" ref="product.product_template_search_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position= "after"> 
+                    <field name="processor"  string="Processor" filter_domain="[('processor', 'ilike', self)]"/> <!--Upgrade the module -->
+                </xpath>
+            </field>
+        </record>
+
+<!--for customizing the search filter-->
+        <record id="product_template_search_view" model="ir.ui.view">
+            <field name="name">product.template.product.form</field>
+            <field name="model">product.templates</field>
+            <field name="inherit_id" ref="product.product_template_search_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='consumable']" position= "after"> 
+                    <filter name="processor"  string="Processor Not Set" filter_domain="[('processor', '=', False)]"/> 
+                </xpath>
+            </field>
+        </record>
+
+<!--For group by customized feature in search bar-->
+        <record id="product_template_search_view" model="ir.ui.view">
+            <field name="name">product.template.product.form</field>
+            <field name="model">product.templates</field>
+            <field name="inherit_id" ref="product.product_template_search_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='type']" position= "after"> 
+                    <filter name="processor" string="Computer" context="{'group_by': 'processor'}"/>
+                </xpath>
+            </field>
+        </record>
+
+
+<!--customized action for menu option -->
+        <menuitem  id="menu_product_template_services"
+              action="product_template_service_action"
+              parent="sale.sale_menu_root" 
+              sequence="11"/>
+
+        
+        <record id="product_template_service_action" model="ir.actions.act_window">   #make the id same for and menu action and for record here if different
+                <field name="name">Serivce Products</field>   #also change this to whatever the name of the menu tag is to be kept
+                <field name="type">ir.actions.act_window</field> 
+                <field name="res_model">product. template</field>
+                <field name="view_mode">kanban, tree, form, activity</field> 
+                <field name="view_id" ref="product.product_template_kanban_view"/> 
+                <field name="search_view_id" ref="product. product_template_search_view" /> 
+                <field name="context">{"search_default_filter_to_sell" :1, "sale_multi_pricelist"}
+                </field>
+                <field name="help" type="html">
+                    <p class="o_view_nocontent_smiling_face">
+                        Create a new product
+                    </p>
+                    <p>
+                        You must define a product for everything you sell or purchase, whether it's a storable product, 
+                        a consumable or a service.
+                    </p>
+
+                </field>
+        </record>
+
+
+<!--To add domain for our customized action-->
+
+
+        <record id="product_template_service_action" model="ir.actions.act_window">   #make the id same for and menu action and for record here if different
+                <field name="name">Serivce Products</field>   #also change this to whatever the name of the menu tag is to be kept
+                <field name="type">ir.actions.act_window</field> 
+                <field name="res_model">product. template</field>
+                <field name="view_mode">kanban, tree, form, activity</field> 
+                <field name="domain">[('detailed_type', '=', 'service')] </field>
+                <field name="view_id" ref="product.product_template_kanban_view"/> 
+                <field name="search_view_id" ref="product. product_template_search_view" /> 
+                <field name="context">{"search_default_filter_to_sell" :1, "sale_multi_pricelist"}
+                </field>
+                <field name="help" type="html">
+                    <p class="o_view_nocontent_smiling_face">
+                        Create a new product
+                    </p>
+                    <p>
+                        You must define a product for everything you sell or purchase, whether it's a storable product, 
+                        a consumable or a service.
+                    </p>
+
+                </field>
+        </record>
+
+        #upgrade the module and then see the filter for product type with "service"
+
+
+
+
+
+
 
     </data>
 

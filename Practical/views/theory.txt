@@ -14,3 +14,55 @@
 - After that we add the name of out customized field <field name="processor"/> then we close the xpath tag 
 - Restart the odoo service and upgrade the module then we can view the custom field in the form 
 - we can view the customized field in the form and then we can see out inheritance in inherited views  
+
+# To edit customized action for menu options
+- First select the form of the any element and in debug section select view metadeta 
+- After opening the meta deta section select the xml id of the form 
+  eg: sale.product_template_action
+      👆 module  👆 after dot is the id 
+- After copying the id search that in sales module and select the menu code 
+
+-  <menuitem  id="menu_product_template_services"
+              action="product_template_service_action"
+              sequence="11"/>
+
+
+- After this go to edit action in debug section and then select the external id of the product and search that id in subsequent module
+  eg: mrp.product_template_action
+
+- After searching copy the content of record tag and paste it in customized module
+        
+        <record id="product_template_service_action" model="ir.actions.act_window">   #make the id same for and menu action and for record here if different
+                <field name="name">Serivce Products</field>   #also change this to whatever the name of the menu tag is to be kept
+                <field name="type">ir.actions.act_window</field> 
+                <field name="res_model">product. template</field>
+                <field name="view_mode">kanban, tree, form, activity</field> 
+                <field name="view_id" ref="product.product_template_kanban_view"/> 
+                <field name="search_view_id" ref="product. product_template_search_view" /> 
+                <field name="context">{"search_default_filter_to_sell" :1, "sale_multi_pricelist"}
+                </field>
+                <field name="help" type="html">
+                    <p class="o_view_nocontent_smiling_face">
+                        Create a new product
+                    </p>
+                    <p>
+                        You must define a product for everything you sell or purchase, whether it's a storable product, 
+                        a consumable or a service.
+                    </p>
+
+                </field>
+        </record>
+ 
+- lastly add the parent id for the menu items
+- go to the settings then technical and then to menu items then search for the required module eg: products and then open it 
+- after opening you will see the parent Menu in which click the arrow and you will see the parent menu in detail 
+- after opening it in detail click the debug option and select view meta deta and from here select the xml id 
+- after copying the xml id add it to the menu items tag as parent
+
+eg: <menuitem  id="menu_product_template_services"
+              action="product_template_service_action"
+              parent="sale.sale_menu_root" 
+              sequence="11"/>
+
+-upgrade the module and see the changes and refresh
+
