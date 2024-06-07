@@ -1,4 +1,4 @@
-#Lets go step by step of how to how to inherit and launch module in odoo app environment 
+#Lets go step by step of how to inherit and launch module in odoo app environment 
 
 - First make an odoo directory by using ./odoo-bin scaffold module_name directory_name
 - after creation of that file make the init.py file and manifest.py file 
